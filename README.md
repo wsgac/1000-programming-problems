@@ -1,9 +1,8 @@
-# 1000-programming-problems
-Solutions to problems from M. E. Abramyan's problem book
+# 1000 Programming Problems
 
 Collection of solutions to programming problems from M. E. Abramyan's
 Programming Taskbook. I'm following the 3-part Russian language
-original (available here: [part
+original: 1000 Задач по Программированию (available here: [part
 1](https://vk.com/doc7608079_437791016?hash=974328463510df630b&dl=fc3d521a12b931adea),
 [part
 2](https://vk.com/doc7608079_437791017?hash=a1e12e48ff8d2c4891&dl=dba7920c67b34974c9)
