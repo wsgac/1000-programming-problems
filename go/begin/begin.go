@@ -138,3 +138,59 @@ func Begin21(p1, p2, p3 Point2d) (float64, float64) {
 	p := (a + b + c) / 2.0
 	return 2 * p, math.Sqrt(p * (p - a) * (p - b) * (p - c))
 }
+
+// Begin22 swaps its two arguments and returns their new values
+func Begin22(a, b *float64) (float64, float64) {
+	*a, *b = *b, *a
+	return *a, *b
+}
+
+// Begin23 rotates the values of a, b and c to the right
+func Begin23(a, b, c *float64) (float64, float64, float64) {
+	*a, *b, *c = *c, *a, *b
+	return *a, *b, *c
+}
+
+// Begin24 rotates the values of a, b and c to the left
+func Begin24(a, b, c *float64) (float64, float64, float64) {
+	*a, *b, *c = *b, *c, *a
+	return *a, *b, *c
+}
+
+// Begin25 calculates the appropriate polynomial at x
+func Begin25(x float64) float64 {
+	x2 := x * x
+	return 3*x2*x2*x2 - 6*x2 - 7
+}
+
+// Begin26 calculates the appropriate polynomial in a shifted point
+func Begin26(x float64) float64 {
+	shifted3 := (x - 3) * (x - 3) * (x - 3)
+	return 4*shifted3*shifted3 - 7*shifted3 + 2
+}
+
+// Begin27 calculates a^8 using 3 multiplications
+func Begin27(a float64) float64 {
+	tmp := a * a
+	tmp *= tmp
+	return tmp * tmp
+}
+
+// Begin28 calculates a^15 using 5 multiplications and 2 tmp variables
+func Begin28(a float64) float64 {
+	tmp2 := a * a
+	tmp3 := tmp2 * a
+	tmp2 *= tmp2 * tmp3
+	tmp3 *= tmp2 * tmp2
+	return tmp2 * tmp3
+}
+
+// Begin29 converts degrees to radians
+func Begin29(a float64) float64 {
+	return a / 180.0 * 3.14
+}
+
+// Begin30 converts radians to degrees
+func Begin30(a float64) float64 {
+	return a / 3.14 * 180.0
+}

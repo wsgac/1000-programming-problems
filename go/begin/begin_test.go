@@ -175,3 +175,63 @@ func TestBegin9(t *testing.T) {
 		}
 	}
 }
+
+func TestBegin22(t *testing.T) {
+	tests := []struct {
+		input    []float64
+		expected []float64
+	}{
+		{[]float64{1.0, 4.0}, []float64{4.0, 1.0}},
+		{[]float64{2.0, 8.7}, []float64{8.7, 2.0}},
+		{[]float64{10.0, 1234.0}, []float64{1234.0, 10.0}},
+		{[]float64{123.0, 128.0}, []float64{128.0, 123.0}},
+	}
+	for _, test := range tests {
+		a, b := test.input[0], test.input[1]
+		retA, retB := Begin22(&a, &b)
+		if test.input[0] != b || test.input[1] != a ||
+			test.input[0] != retB || test.input[1] != retA {
+			t.Fatalf("Expected: %v Got: %v", test.expected, []float64{a, b})
+		}
+	}
+}
+
+func TestBegin23(t *testing.T) {
+	tests := []struct {
+		input    []float64
+		expected []float64
+	}{
+		{[]float64{1.0, 4.0, 43.0}, []float64{4.0, 43.0, 1.0}},
+		{[]float64{2.0, 8.7, 832.1}, []float64{8.7, 832.1, 2.0}},
+		{[]float64{10.0, 1234.0, 432.23}, []float64{1234.0, 432.23, 10.0}},
+		{[]float64{123.0, 128.0, 52.234}, []float64{128.0, 52.234, 123.0}},
+	}
+	for _, test := range tests {
+		a, b, c := test.input[0], test.input[1], test.input[2]
+		retA, retB, retC := Begin23(&a, &b, &c)
+		if test.input[0] != b || test.input[1] != c || test.input[2] != a ||
+			test.input[0] != retB || test.input[1] != retC || test.input[2] != retA {
+			t.Fatalf("Expected: %v Got: %v", test.expected, []float64{a, b, c})
+		}
+	}
+}
+
+func TestBegin24(t *testing.T) {
+	tests := []struct {
+		input    []float64
+		expected []float64
+	}{
+		{[]float64{1.0, 4.0, 43.0}, []float64{4.0, 43.0, 1.0}},
+		{[]float64{2.0, 8.7, 832.1}, []float64{8.7, 832.1, 2.0}},
+		{[]float64{10.0, 1234.0, 432.23}, []float64{1234.0, 432.23, 10.0}},
+		{[]float64{123.0, 128.0, 52.234}, []float64{128.0, 52.234, 123.0}},
+	}
+	for _, test := range tests {
+		a, b, c := test.input[0], test.input[1], test.input[2]
+		retA, retB, retC := Begin24(&a, &b, &c)
+		if test.input[0] != c || test.input[1] != a || test.input[2] != b ||
+			test.input[0] != retC || test.input[1] != retA || test.input[2] != retB {
+			t.Fatalf("Expected: %v Got: %v", test.expected, []float64{a, b, c})
+		}
+	}
+}
