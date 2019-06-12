@@ -194,3 +194,66 @@ func Begin29(a float64) float64 {
 func Begin30(a float64) float64 {
 	return a / 3.14 * 180.0
 }
+
+// Begin31 converts Fahrenheit to Celsius
+func Begin31(Tf float64) float64 {
+	return (Tf - 32.0) * 5.0 / 9.0
+}
+
+// Begin32 converts Celsius to Fahrenheit
+func Begin32(Tc float64) float64 {
+	return Tc*1.8 + 32.0
+}
+
+// Begin33 calculates price of one kg and y kg of candy
+func Begin33(x, a, y float64) (float64, float64) {
+	OneKg := a / x
+	return OneKg, OneKg * y
+}
+
+// Begin34 returns unit prices for chocolate candy and Irises and the quotient of those
+func Begin34(x, a, y, b float64) (float64, float64, float64) {
+	KgA := a / x
+	KgB := b / y
+	return KgA, KgB, KgA / KgB
+}
+
+// Begin35 calculates length traveled by boat on the lake and on the river
+func Begin35(v, u, t1, t2 float64) float64 {
+	return t1*v + t2*(v-u)
+}
+
+// Begin36 calculates distance between cars after time t
+// cars travel in the same direction
+func Begin36(v1, v2, s, t float64) float64 {
+	p1 := t * v1
+	p2 := t * v2
+	return math.Abs(p1 - p2)
+}
+
+// Begin37 calculates distance between cars after time t
+// cars travel in the opposite direction
+func Begin37(v1, v2, s, t float64) float64 {
+	p1 := t * v1
+	p2 := s - t*v2
+	return math.Abs(p1 - p2)
+}
+
+// Begin38 solves the linear equation ax + b = 0
+func Begin38(a, b float64) float64 {
+	return -b / a
+}
+
+// Begin39 solves the quadratic equation ax^2 + bx + c = 0
+func Begin39(a, b, c float64) (float64, float64) {
+	d := b*b - 4*a*c // Discriminant
+	return (-b + d) / (2 * a), (-b - d) / (2 * a)
+}
+
+// Begin40 solves the following system of equations:
+// a1 x + b1 y = c1
+// a2 x + b2 y = c2
+func Begin40(a1, b1, c1, a2, b2, c2 float64) (float64, float64) {
+	d := a1*b2 - a2*b1
+	return (c1*b2 - c2*b1) / d, (a1*c2 - a2*c1) / d
+}
