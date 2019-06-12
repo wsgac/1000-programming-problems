@@ -139,3 +139,39 @@ func TestBegin7(t *testing.T) {
 		}
 	}
 }
+
+func TestBegin8(t *testing.T) {
+	tests := []struct {
+		input    []float64
+		expected float64
+	}{
+		{[]float64{1.0, 4.0}, 2.5},
+		{[]float64{2.0, 8.7}, 5.35},
+		{[]float64{10.0, 1234.0}, 622.0},
+		{[]float64{123.0, 128.0}, 125.5},
+	}
+	for _, test := range tests {
+		output := Begin8(test.input[0], test.input[1])
+		if output != test.expected {
+			t.Fatalf("Expected: %v Got: %v", test.expected, output)
+		}
+	}
+}
+
+func TestBegin9(t *testing.T) {
+	tests := []struct {
+		input    []float64
+		expected float64
+	}{
+		{[]float64{1.0, 4.0}, 2.0},
+		{[]float64{2.0, 8.7}, 4.171330722922842},
+		{[]float64{10.0, 1234.0}, 111.08555261599052},
+		{[]float64{123.0, 128.0}, 125.47509713086498},
+	}
+	for _, test := range tests {
+		output := Begin9(test.input[0], test.input[1])
+		if output != test.expected {
+			t.Fatalf("Expected: %v Got: %v", test.expected, output)
+		}
+	}
+}
