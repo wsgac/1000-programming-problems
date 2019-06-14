@@ -85,4 +85,77 @@ func Integer14(n int64) int64 {
 	return 100*n%10 + n/10
 }
 
-// Integer15
+// Integer15 swaps the first two digits in a three-digit number
+func Integer15(n int64) int64 {
+	d := make([]int64, 3)
+	for i := 2; i >= 0; i-- {
+		d[i] = n % 10
+		n /= 10
+	}
+	d[0], d[1] = d[1], d[0]
+	ret := int64(0)
+	for i := 0; i < 3; i++ {
+		ret = ret*10 + d[i]
+	}
+	return ret
+}
+
+// Integer16 swaps the last two digits in a three-digit number
+func Integer16(n int64) int64 {
+	d := make([]int64, 3)
+	for i := 2; i >= 0; i-- {
+		d[i] = n % 10
+		n /= 10
+	}
+	d[2], d[1] = d[1], d[2]
+	ret := int64(0)
+	for i := 0; i < 3; i++ {
+		ret = ret*10 + d[i]
+	}
+	return ret
+}
+
+// Integer17 returns the number of hundreds in a number > 999
+func Integer17(n int64) int64 {
+	return n / 100 % 10
+}
+
+// Integer18 returns the number of thousands in a number > 999
+func Integer18(n int64) int64 {
+	return n / 1000 % 10
+}
+
+// Integer19 return the number of full minutes in n seconds
+func Integer19(n int64) int64 {
+	return n / 60
+}
+
+// Integer20 return the number of full hours in n seconds
+func Integer20(n int64) int64 {
+	return n / 3600
+}
+
+// Integer21 return the number of seconds elapsed from the start of last full minute in n seconds
+func Integer21(n int64) int64 {
+	return n % 60
+}
+
+// Integer22 return the number of seconds elapsed from the start of last full hour in n seconds
+func Integer22(n int64) int64 {
+	return n % 3600
+}
+
+// Integer23 return the number of full minutes elapsed from the start of last full hour in n seconds
+func Integer23(n int64) int64 {
+	return n % 3600 / 60
+}
+
+// Integer24 returns the day of the week of the k-th day, assuming Jan 1 was Monday
+func Integer24(k int64) int64 {
+	return k % 7
+}
+
+// Integer25 returns the day of the week of the k-th day, assuming Jan 1 was Thursday
+func Integer25(k int64) int64 {
+	return (k + 3) % 7
+}
