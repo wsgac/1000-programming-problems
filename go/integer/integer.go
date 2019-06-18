@@ -152,10 +152,42 @@ func Integer23(n int64) int64 {
 
 // Integer24 returns the day of the week of the k-th day, assuming Jan 1 was Monday
 func Integer24(k int64) int64 {
-	return k % 7
+	return (k + 1) % 7
 }
 
 // Integer25 returns the day of the week of the k-th day, assuming Jan 1 was Thursday
 func Integer25(k int64) int64 {
 	return (k + 3) % 7
+}
+
+// Integer26 returns the day of the week of the k-th day, assuming Jan 1 was Tuesday (1-7)
+func Integer26(k int64) int64 {
+	return (k)%7 + 1
+}
+
+// Integer27 returns the day of the week of the k-th day, assuming Jan 1 was Saturday (1-7)
+func Integer27(k int64) int64 {
+	return (k+4)%7 + 1
+}
+
+// Integer28 returns the day of the week of the k-th day, assuming Jan 1 was Nth day (1-7)
+func Integer28(k int64, n int64) int64 {
+	return (k+n-2)%7 + 1
+}
+
+// Integer29
+func Integer29(a, b, c int64) (int64, int64) {
+	cInA := a / c
+	cInB := b / c
+	cSquares := cInA * cInB
+	return cSquares, a*b - cSquares*c*c
+}
+
+// Integer30
+func Integer30(y int64) int64 {
+	if y%100 == 0 {
+		return y / 100
+	} else {
+		return y/100 + 1
+	}
 }

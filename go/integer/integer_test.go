@@ -110,3 +110,73 @@ func TestInteger25(t *testing.T) {
 		}
 	}
 }
+
+func TestInteger26(t *testing.T) {
+	tests := []struct {
+		input, expected int64
+	}{
+		{1, 2},
+		{2, 3},
+		{3, 4},
+		{4, 5},
+		{5, 6},
+		{6, 7},
+		{7, 1},
+		{8, 2},
+		{9, 3},
+		{10, 4},
+	}
+	for _, test := range tests {
+		output := Integer26(test.input)
+		if output != test.expected {
+			t.Errorf("Got: %v Expected: %v", output, test.expected)
+		}
+	}
+}
+
+func TestInteger27(t *testing.T) {
+	tests := []struct {
+		input, expected int64
+	}{
+		{1, 6},
+		{2, 7},
+		{3, 1},
+		{4, 2},
+		{5, 3},
+		{6, 4},
+		{7, 5},
+		{8, 6},
+		{9, 7},
+		{10, 1},
+	}
+	for _, test := range tests {
+		output := Integer27(test.input)
+		if output != test.expected {
+			t.Errorf("Got: %v Expected: %v", output, test.expected)
+		}
+	}
+}
+
+func TestInteger28(t *testing.T) {
+	tests := []struct {
+		input    []int64
+		expected int64
+	}{
+		{[]int64{1, 6}, 6},
+		{[]int64{2, 6}, 7},
+		{[]int64{3, 6}, 1},
+		{[]int64{4, 6}, 2},
+		{[]int64{5, 6}, 3},
+		{[]int64{6, 6}, 4},
+		{[]int64{7, 6}, 5},
+		{[]int64{8, 6}, 6},
+		{[]int64{9, 6}, 7},
+		{[]int64{10, 6}, 1},
+	}
+	for _, test := range tests {
+		output := Integer28(test.input[0], test.input[1])
+		if output != test.expected {
+			t.Errorf("Got: %v Expected: %v", output, test.expected)
+		}
+	}
+}
