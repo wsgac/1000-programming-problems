@@ -1,5 +1,7 @@
 package boolean
 
+import "math"
+
 // Boolean1 checks if its argument is a positive number
 func Boolean1(a int64) bool {
 	return a > 0
@@ -173,11 +175,44 @@ func Boolean28(x, y int64) bool {
 }
 
 // Boolean29 checks if point (x,y) lies inside a rectangle spanned by (x1,y1) and (x2,y2)
-func Boolean29(x, y, x1, y1, x2, y2) bool {
+func Boolean29(x, y, x1, y1, x2, y2 int64) bool {
 	return x1 < x && x < x2 && y2 < y && y < y1
 }
 
-// Boolean30
+// Boolean30 checks if its arguments are the sides of an equilateral triangle
 func Boolean30(a, b, c int64) bool {
-
+	return a == b && b == c
 }
+
+// Boolean31 checks if its arguments are the sides of an isosceles triangle
+func Boolean31(a, b, c int64) bool {
+	return a == b || b == c || c == a
+}
+
+// Boolean32 checks if its arguments are the sides of right triangle triangle
+func Boolean32(a, b, c int64) bool {
+	if a > b && a > c {
+		return a*a == b*b+c*c
+	} else if b > a && b > c {
+		return b*b == a*a+c*c
+	} else {
+		return c*c == a*a+b*b
+	}
+}
+
+// Boolean33 checks if its arguments satisfy the triangle inequality
+func Boolean33(a, b, c int64) bool {
+	return a < b+c && b < c+a && c < a+b
+}
+
+// Boolean34 checks if field (x,y) on a chessboard is white, given that (1,1) in the lower left corner is black
+func Boolean34(x, y int64) bool {
+	return (x+y-2)%2 == 1
+}
+
+// Boolean35 checks if points (x1,y1) and (x2,y2) on the chessboard are of the same color
+func Boolean35(x1, y1, x2, y2 int64) bool {
+	return int64(math.Abs(float64(x2-x1+y2-x1))-2)%2 == 0
+}
+
+// Boolean36
